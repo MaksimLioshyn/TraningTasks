@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Globalization;
 
@@ -68,6 +69,61 @@ namespace ClassLibraryNumbers
             }
 
             return l;
+        }
+
+        public static decimal FindCostOfTileToCoverWxHFloor(decimal w, decimal h, decimal cost)
+        {
+            return w * h * cost;
+        }
+
+        public static double MortgageCalculator(double loan, double interestRate, double term)
+        {
+            double rate = (interestRate / 100) / 12;
+            double bases = (rate + 1);
+            double months = term * 12;
+            double result = 0;
+            result = loan * (rate * (Math.Pow(bases, months)) / ((Math.Pow(bases, months)) - 1));
+
+            return Math.Round(result,2);
+        }
+
+        public static void ChangeReturnProgram()
+        {
+        }
+
+        public static void BinaryToDecimalAndBackConverter(ref decimal numbDecimal, ref string numbBinary, bool direction)
+        {
+            if (direction)
+            {
+
+            }
+            else
+            {
+            }
+        }
+
+        public static void Calculator(int n)
+        {
+        }
+
+        public static void UnitConverter(int n)
+        {
+        }
+
+        public static void AlarmClock(int n)
+        {
+        }
+
+        public static void DistanceBetweenTwoCities(int n)
+        {
+        }
+
+        public static void CreditCardValidator(int n)
+        {
+        }
+
+        public static void TaxCalculator(int n)
+        {
         }
     }
 }

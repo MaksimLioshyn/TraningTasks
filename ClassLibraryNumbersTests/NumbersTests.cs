@@ -62,5 +62,77 @@ namespace ClassLibraryNumbersTests
         {
             return NextPrimeNumber(n);
         }
+
+        [TestCase(1.1, 1, 1, ExpectedResult = 1.1)]
+        [TestCase(2, 2, 1, ExpectedResult = 4)]
+        [TestCase(2, 1, 2, ExpectedResult = 4)]
+        [TestCase(100, 100, 1.1, ExpectedResult = 10000*1.1)]
+        [TestCase(400, 25, 200, ExpectedResult = 400*25*200)]
+        public decimal FindCostOfTileToCoverWxHFloorTest(decimal w, decimal h, decimal cost)
+        {
+            return FindCostOfTileToCoverWxHFloor(w, h, cost);
+        }
+
+        [TestCase(1000, 12, 12, ExpectedResult = 13.13)]
+        [TestCase(1000, 15, 12, ExpectedResult = 15.01)]
+        [TestCase(1000, 20, 12, ExpectedResult = 18.37)]
+        [TestCase(1000, 25, 12, ExpectedResult = 21.96)]
+        [TestCase(1000, 50, 12, ExpectedResult = 41.78)]
+        public double MortgageCalculatorTest(double loan, double interestRate, double term)
+        {
+            return MortgageCalculator(loan, interestRate, term);
+        }
+
+        [Test()]
+        public void ChangeReturnProgramTest()
+        {
+            Assert.Fail();
+        }
+
+        [TestCase(10000, "", true)]
+        //[TestCase(1000, 15, 12, ExpectedResult = 15.01)]
+        //[TestCase(1000, 20, 12, ExpectedResult = 18.37)]
+        //[TestCase(1000, 25, 12, ExpectedResult = 21.96)]
+        //[TestCase(1000, 50, 12, ExpectedResult = 41.78)]
+        public void BinaryToDecimalAndBackConverterTest(decimal numbDecimal, string numbBinary, bool direction)
+        {
+            BinaryToDecimalAndBackConverter(ref numbDecimal, ref numbBinary,direction);
+        }
+
+        [Test()]
+        public void CalculatorTest()
+        {
+            Assert.Fail();
+        }
+
+        [Test()]
+        public void UnitConverterTest()
+        {
+            Assert.Fail();
+        }
+
+        [Test()]
+        public void AlarmClockTest()
+        {
+            Assert.Fail();
+        }
+
+        [Test()]
+        public void DistanceBetweenTwoCitiesTest()
+        {
+            Assert.Fail();
+        }
+
+        [Test()]
+        public void CreditCardValidatorTest()
+        {
+            Assert.Fail();
+        }
+
+        [Test()]
+        public void TaxCalculatorTest()
+        {
+            Assert.Fail();
+        }
     }
 }
