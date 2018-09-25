@@ -7,6 +7,7 @@ namespace ClassLibraryNumbers
 {
     public static class Numbers
     {
+        public delegate decimal Operations(decimal a, decimal b);
         public static string FindPItoTheNthDigit(int n) => Math.PI.ToString(CultureInfo.InvariantCulture).Substring(0, n + 2);
 
         public static string FindEToTheNthDigit(int n) => Math.E.ToString(CultureInfo.InvariantCulture).Substring(0, n + 2);
@@ -93,17 +94,11 @@ namespace ClassLibraryNumbers
 
         public static void BinaryToDecimalAndBackConverter(ref decimal numbDecimal, ref string numbBinary, bool direction)
         {
-            if (direction)
-            {
-
-            }
-            else
-            {
-            }
         }
 
-        public static void Calculator(int n)
+        public static decimal Calculator(decimal a, decimal b, Operations o)
         {
+            return o(a, b);
         }
 
         public static void UnitConverter(int n)

@@ -66,8 +66,8 @@ namespace ClassLibraryNumbersTests
         [TestCase(1.1, 1, 1, ExpectedResult = 1.1)]
         [TestCase(2, 2, 1, ExpectedResult = 4)]
         [TestCase(2, 1, 2, ExpectedResult = 4)]
-        [TestCase(100, 100, 1.1, ExpectedResult = 10000*1.1)]
-        [TestCase(400, 25, 200, ExpectedResult = 400*25*200)]
+        [TestCase(100, 100, 1.1, ExpectedResult = 10000 * 1.1)]
+        [TestCase(400, 25, 200, ExpectedResult = 400 * 25 * 200)]
         public decimal FindCostOfTileToCoverWxHFloorTest(decimal w, decimal h, decimal cost)
         {
             return FindCostOfTileToCoverWxHFloor(w, h, cost);
@@ -96,14 +96,14 @@ namespace ClassLibraryNumbersTests
         //[TestCase(1000, 50, 12, ExpectedResult = 41.78)]
         public void BinaryToDecimalAndBackConverterTest(decimal numbDecimal, string numbBinary, bool direction)
         {
-            BinaryToDecimalAndBackConverter(ref numbDecimal, ref numbBinary,direction);
+            BinaryToDecimalAndBackConverter(ref numbDecimal, ref numbBinary, direction);
         }
 
-        [Test()]
-        public void CalculatorTest()
-        {
-            Assert.Fail();
-        }
+        [TestCase(100,200, ExpectedResult = 300.0)]
+        [TestCase(100, 100, ExpectedResult = 200.0)]
+        [TestCase(100, -200, ExpectedResult = -100.0)]
+        [TestCase(0, -100, ExpectedResult = -100.0)]
+        public decimal CalculatorTest(decimal a, decimal b) => Calculator(a, b, (aa, bb) => aa + bb);
 
         [Test()]
         public void UnitConverterTest()
